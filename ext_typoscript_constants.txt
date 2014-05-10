@@ -1,0 +1,13 @@
+module.tx_k23imagecrop {
+	view {
+		# cat=module.tx_k23imagecrop/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:k23_imagecrop/Resources/Private/Templates/
+		# cat=module.tx_k23imagecrop/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:k23_imagecrop/Resources/Private/Partials/
+		# cat=module.tx_k23imagecrop/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:k23_imagecrop/Resources/Private/Layouts/
+	}
+	persistence {
+		
+	}
+}

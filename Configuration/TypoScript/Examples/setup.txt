@@ -1,0 +1,63 @@
+
+# Module configuration
+module.tx_k23imagecrop.settings.presets {
+
+  person {
+    # Title of the preset
+    label   = Triangle (Composite overlay, resizing)
+    
+    # Destination size (will be scaled for preview)
+    width   = 300
+    height  = 300
+    
+    # Preview overlay image
+    overlay = typo3conf/ext/k23_imagecrop/Resources/Public/Examples/overlayA.png
+    
+    # Resizes the cropped Image to the destination size? (0/1)
+    resize = 1
+    
+    # Merges the overlay image to the cropped image
+    composite = 1
+  }
+
+  header {
+    label   = Header-Image (with resizing)
+    width   = 800
+    height  = 300
+    overlay = typo3conf/ext/k23_imagecrop/Resources/Public/Examples/overlayB.png
+    resize = 1
+  }
+
+  header2 {
+    label   = Header-Image (no preview, no resizing)
+    width   = 800
+    height  = 300
+    resize = 0
+  }
+  
+  user {
+  	label           = Overwrite and TS
+	width           = 300
+	height          = 300
+	overlay         = typo3conf/ext/k23_imagecrop/Resources/Public/Examples/overlayA.png
+	resize          = 1
+	composite       = 1
+	
+	# Disables the filename input field
+	disableFilename = 1
+	
+	# Overwrites file if exists?
+	overwriteFile = 1
+	
+	#
+	# Needs full path and name to file, will be rendered as TypoScript TEXT Object
+	# 
+	# You can use and string parameter of the file FAL object (in uppercase markers like ###EXTENSION### for file ext.)
+	# Another marker ist ###BASENAME### for the filename without path and extension (maybe to pre or post a string to filename)
+	# Also ###BASEPATH### is for the current folder the original image was opened
+	#
+	fileName.value = ###BASEPATH###/{GP:tx_k23imagecrop_fileimgcrop|preset}_###BASENAME###_test.###EXTENSION###
+	fileName.insertData = 1
+  }
+
+}

@@ -1,0 +1,72 @@
+{namespace ic=KERN23\K23Imagecrop\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="wizard">
+
+<div id="form">
+  <f:form action="save">
+    <f:form.hidden name="table" value="{image.table}" />
+    <f:form.hidden name="referer" id="referer" value="{referer}" />
+  	<f:form.hidden name="scaledPercent" value="{image.scaledPercent}" />
+    <f:form.hidden name="width" value="{image.width}" />
+    <f:form.hidden name="height" value="{image.height}" />
+    <f:form.hidden name="scaledWidth" value="{image.scaledWidth}" />
+    <f:form.hidden name="scaledHeight" value="{image.scaledHeight}" />
+    <f:form.hidden name="x1" id="x1" value="" />
+    <f:form.hidden name="y1" id="y1" value="" />
+    <f:form.hidden name="x2" id="x2" value="" />
+    <f:form.hidden name="y2" id="y2" value="" />
+    <f:form.hidden name="w" id="w" value="" />
+    <f:form.hidden name="h" id="h" value="" />
+    
+    <div class="field formPreset">
+      <label for="preset">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:preset')}</label>
+      <select name="tx_k23imagecrop_fileimgcrop[preset]" class="preset" id="preset">
+        <option value="-1" data-scaledWidthPreview="{preview.scaledWidth}" data-scaledHeightPreview="{preview.scaledHeight}">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:no_selection')}</option>
+      
+        <f:for each="{presets}" as="preset" key="key" iteration="i">
+        <option value="{key}" data-overwriteFile="{preset.overwriteFile}" data-disableFilename="{preset.disableFilename}" data-overlay="{preset.overlay}" data-width="{preset.width}" data-height="{preset.height}" data-scaledWidth="{preset.scaledWidth}" data-scaledHeight="{preset.scaledHeight}" data-scaledWidthPreview="{preset.scaledWidthPreview}" data-scaledHeightPreview="{preset.scaledHeightPreview}" data-scaledPercent="{preset.scaledPercent}">{preset.label}</option>
+        </f:for>
+      </select>
+    </div>
+    <div class="field formFilename">
+      <label for="newFilename">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:filename')}</label>
+      <f:form.textfield name="newFilename" value="{ic:file.basename(filePath:'{image.fileName}',unique:1)}" id="newFilename" />
+    </div>
+    <div class="fieldClear"></div>
+    
+    <div class="field formPreview">
+      <input type="checkbox" name="showPreview" value="Preview" id="showPreview" />
+      <label for="showPreview">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:preview')}</label>
+    </div>
+    <div class="field formAspectRatio">
+      <input type="checkbox" name="aspectRatio" value="Preview" id="aspectRatio" checked="checked" />
+      <label for="aspectRatio">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:aspectRatio')}</label>
+    </div>
+    <div class="field formOverwriteFile">
+      <f:form.checkbox name="overwriteFile" value="1" id="overwriteFile" />
+      <label for="overwriteFile">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:overwriteFile')}</label>
+    </div>
+    <div class="fieldClear"></div>
+    
+    <div class="field formSave">
+      <f:form.submit name="save" value="{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:save')}" />
+    </div>
+    <div class="field formCancel">
+      <input type="button" name="cancel" value="{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:cancel')}" id="cancel" />
+    </div>
+    <div class="fieldClear"></div>
+  </f:form>
+</div>
+
+<div id="cropContainer">
+  <img src="../{storagePath.basePath}{image.relFileName}" id="target" alt="" width="{image.scaledWidth}" height="{image.scaledHeight}" />
+</div>
+
+<div id="preview-pane">
+  <div class="preview-container" style="width: {preview.scaledWidth}px; height: {preview.scaledHeight}px;">
+    <img src="../{storagePath.basePath}{image.relFileName}" class="jcrop-preview" alt="" />
+    <div id="overlay"></div>
+  </div>
+</div>
+
+</f:section>

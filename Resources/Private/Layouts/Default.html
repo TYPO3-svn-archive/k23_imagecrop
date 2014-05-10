@@ -1,0 +1,13 @@
+{namespace ic=KERN23\K23Imagecrop\ViewHelpers}
+<ic:be.addFileRelativeToExtension pathToFile="Javascript/jquery/jquery.min.js" />
+<ic:be.addFileRelativeToExtension pathToFile="Javascript/jquery/jquery-ui.min.js" />
+<ic:be.addFileRelativeToExtension pathToFile="Javascript/jcrop/js/jquery.Jcrop.min.js" />
+<ic:be.addFileRelativeToExtension pathToFile="Javascript/init-jcrop.js" />
+<ic:be.addFileRelativeToExtension pathToFile="Javascript/jcrop/css/jquery.Jcrop.css" />
+<ic:be.addFileRelativeToExtension pathToFile="Css/layout.css" />
+
+<f:be.container enableClickMenu="false" loadPrototype="false" loadScriptaculous="false" loadExtJs="true" loadExtJsTheme="false" enableExtJsDebug="false">
+	<div class="tx-k23imagecrop">
+		<f:render section="wizard" arguments="{_all}" />
+	</div>
+</f:be.container>

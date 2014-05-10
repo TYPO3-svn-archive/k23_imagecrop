@@ -1,0 +1,32 @@
+2.0.0
+  14-05-03
+  Feature
+  * #58438: Fit it into TYPO3 6.1
+  * #58469:	Integration of postalcodes AT, CH and DE
+
+1.5.0
+  14-05-04
+  Feature
+  * Main TypoScript included by default, include of static template (expect examples) not needed anymore.
+
+1.4.0
+  Bugfix
+  * Security improvements
+  * Optimized code (like better FAL integration)
+  * New features for presets like modifying the filename and more (see TS static example template for more)
+
+1.3.1
+  Bugfix
+  * Forgot to change the manual changelog ;)
+  * Compatibility Update for TYPO3 6.2
+
+1.0.2
+  Feature
+  * Updated the manual, for better usage in the TER manual rendering process.
+
+1.0.1
+  Bugfix
+  * Small fixes, like new Icons.
+
+1.0.0
+  Initial release

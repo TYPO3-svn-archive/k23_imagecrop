@@ -1,0 +1,102 @@
+
+.tx-k23imagecrop:before {
+	content: '';
+	display: block;
+	background-color: #585858;
+	height: 27px;
+	-moz-box-shadow: -2px 0 1px #414141 inset;
+	-webkit-box-shadow: -2px 0 1px #414141 inset;
+	box-shadow: -2px 0 1px #414141 inset;
+}
+
+
+
+#form {
+	padding: 5px;
+	background-color: #ececec;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.field {
+	padding: 3px;
+}
+
+.field label {
+	position: relative;
+	top: -3px;
+}
+
+.formPreset,
+.formFilename,
+.formSave,
+.formCancel,
+.formPreview,
+.formAspectRatio {
+	float: left;
+}
+
+.fieldClear {
+	clear: both;
+}
+
+.formFilename #newFilename {
+	width: 250px;
+}
+
+
+
+#cropContainer {
+	margin: 20px;
+}
+
+#cropContainer img#target {
+	width: auto;
+}
+
+#cropContainer .jcrop-holder {
+	z-index: 1;
+}
+
+#cropContainer .jcrop-holder img {
+	-moz-box-shadow: 0px 0px 5px #888;
+	-webkit-box-shadow: 0px 0px 5px #888;
+	box-shadow: 0px 0px 5px #888;
+}
+
+
+
+#preview-pane .preview-container {
+	overflow: hidden;
+	position: relative;
+}
+
+#cropContainer .jcrop-holder #preview-pane {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	
+	z-index: 900;
+	cursor: move;
+	border: 5px solid #FFF;
+	
+	-moz-box-shadow: 0px 0px 5px #888;
+	-webkit-box-shadow: 0px 0px 5px #888;
+	box-shadow: 0px 0px 5px #888;
+	
+	display: inline-block;
+}
+
+#cropContainer .jcrop-holder #preview-pane:before {
+	content: 'Preview';
+	display: block;
+	background-color: #fff;
+	padding: 5px;
+	cursor: move;
+}
+
+#cropContainer .jcrop-holder #preview-pane #overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: 100% 100%;
+}

@@ -1,0 +1,38 @@
+# Module configuration
+module.tx_k23imagecrop {
+	persistence {
+		
+	}
+	view {
+		templateRootPath = {$module.tx_k23imagecrop.view.templateRootPath}
+		partialRootPath  = {$module.tx_k23imagecrop.view.partialRootPath}
+		layoutRootPath   = {$module.tx_k23imagecrop.view.layoutRootPath}
+	}
+	settings {
+		
+		# Use PHP ImageMagick Module for better performance
+		# But in some cases Imagick doesn't work, so you can switch :)
+		# 
+		# Use all graphicalFunctions of the Typo3 API (mostly normal PHP Functions not GM or else)
+		# For ImageMagick, you don't need to set IM in the install tool, just install imagick for PHP
+		# 
+		# im = ImageMagick (and some GraphicalFunctions)
+		# gf = GraphicalFunctions (Full Typo3 API)
+		magickToUse = gf
+		
+		image {
+			# Cropping viewport
+			view.maxH = 500
+			view.maxW = 650
+			
+			# Preview viewport
+			preview.maxH = 300
+			preview.maxW = 300
+		}
+		
+		presets {
+			
+		}
+		
+	}
+}

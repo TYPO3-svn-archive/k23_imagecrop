@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'k23_imagecrop'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="cm1_title">Crop Image</label>
+			<label index="userenabled">Should Image crop be available for beusers (can be overriden per user via UserTS)</label>
+			<label index="tsTemplateUid">Get Typoscript Presets from Page UID</label>
+			
+			<label index="preset">Preset</label>
+			<label index="no_selection">Not selected</label>
+			<label index="preview">Preview</label>
+			<label index="save">Save</label>
+			<label index="cancel">Cancel</label>
+			<label index="filename">Filename:</label>
+			<label index="aspectRatio">Aspect Ratio</label>
+			<label index="overwriteFile">Overwrite existing File</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="cm1_title">Bild zuschneiden</label>
+			<label index="userenabled">Soll Image Crop für beuser aktiviert sein (kann pro User mittels UserTS überschrieben werden)</label>
+			<label index="tsTemplateUid">Seiten ID mit TypoScript Template aus denen die Presets geladen werden</label>
+			
+			<label index="preset">Vorlage</label>
+			<label index="no_selection">Keine Auswahl</label>
+			<label index="preview">Vorschau</label>
+			<label index="save">Speichern</label>
+			<label index="cancel">Abbrechen</label>
+			<label index="filename">Dateiname:</label>
+			<label index="aspectRatio">Seitenverhältnis</label>
+			<label index="overwriteFile">Vorhandene Datei überschreiben</label>
+		</languageKey>
+	</data>
+</T3locallang>
