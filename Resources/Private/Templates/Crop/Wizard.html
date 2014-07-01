@@ -6,7 +6,7 @@
   <f:form action="save">
     <f:form.hidden name="table" value="{image.table}" />
     <f:form.hidden name="referer" id="referer" value="{referer}" />
-  	<f:form.hidden name="scaledPercent" value="{image.scaledPercent}" />
+  	<f:form.hidden id="scaledPercent" name="scaledPercent" value="{image.scaledPercent}" />
     <f:form.hidden name="width" value="{image.width}" />
     <f:form.hidden name="height" value="{image.height}" />
     <f:form.hidden name="scaledWidth" value="{image.scaledWidth}" />
@@ -24,7 +24,7 @@
         <option value="-1" data-scaledWidthPreview="{preview.scaledWidth}" data-scaledHeightPreview="{preview.scaledHeight}">{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:no_selection')}</option>
       
         <f:for each="{presets}" as="preset" key="key" iteration="i">
-        <option value="{key}" data-overwriteFile="{preset.overwriteFile}" data-disableFilename="{preset.disableFilename}" data-overlay="{preset.overlay}" data-width="{preset.width}" data-height="{preset.height}" data-scaledWidth="{preset.scaledWidth}" data-scaledHeight="{preset.scaledHeight}" data-scaledWidthPreview="{preset.scaledWidthPreview}" data-scaledHeightPreview="{preset.scaledHeightPreview}" data-scaledPercent="{preset.scaledPercent}">{preset.label}</option>
+        <option value="{key}" data-overwriteFile="{preset.overwriteFile}" data-warnMinSize="{preset.warnMinSize}" data-disableFilename="{preset.disableFilename}" data-overlay="{preset.overlay}" data-width="{preset.width}" data-height="{preset.height}" data-scaledWidth="{preset.scaledWidth}" data-scaledHeight="{preset.scaledHeight}" data-scaledWidthPreview="{preset.scaledWidthPreview}" data-scaledHeightPreview="{preset.scaledHeightPreview}" data-scaledPercent="{preset.scaledPercent}">{preset.label}</option>
         </f:for>
       </select>
     </div>
@@ -54,6 +54,9 @@
     <div class="field formCancel">
       <input type="button" name="cancel" value="{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:cancel')}" id="cancel" />
     </div>
+		<div class="field warnMinSize" id="warnMinSize">
+			{f:translate(key:'LLL:EXT:k23_imagecrop/Resources/Private/Language/locallang_be.xml:warnMinSize')}
+		</div>
     <div class="fieldClear"></div>
   </f:form>
 </div>

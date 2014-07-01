@@ -9,6 +9,9 @@ module.tx_k23imagecrop.settings.presets {
     # Destination size (will be scaled for preview)
     width   = 300
     height  = 300
+		
+		# Show a warning if the cropped area is smaller than image resolution
+		warnMinSize = 1
     
     # Preview overlay image
     overlay = typo3conf/ext/k23_imagecrop/Resources/Public/Examples/overlayA.png

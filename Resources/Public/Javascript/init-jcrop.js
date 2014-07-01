@@ -11,6 +11,12 @@ $(function() {
 		xsize = pcnt.width(),
 		ysize = pcnt.height();
 	
+	var scaledPercent = $('#scaledPercent').val(),
+			warnMinSize   = 0,
+			selPre        = $('#preset'),
+			option,
+			targetW,
+			targetH;
 	
 	
 	// Preview funktion
@@ -27,12 +33,24 @@ $(function() {
 			});
 		}
 		
+		var cW = Math.ceil(c.w);
+		var cH = Math.ceil(c.h);
+		
 		$('#x1').val(Math.ceil(c.x));
 		$('#y1').val(Math.ceil(c.y));
 		$('#x2').val(Math.ceil(c.x2));
 		$('#y2').val(Math.ceil(c.y2));
-		$('#w').val(Math.ceil(c.w));
-		$('#h').val(Math.ceil(c.h));
+		$('#w').val(cW);
+		$('#h').val(cH);
+		
+		if ( warnMinSize == 1 ) {
+			var curOrigW = Math.ceil((cW / scaledPercent) * 100);
+			var curOrigH = Math.ceil((cH / scaledPercent) * 100);
+			
+			if ( (curOrigW < targetW) || (curOrigH < targetH) ) {
+				$('#warnMinSize:hidden').show();
+			} else $('#warnMinSize:visible').hide();
+		}
 	};
 	
 	function enableJcrop(ratio) {
@@ -97,8 +115,12 @@ $(function() {
 	});
 	
 	// Preset Selector
-	$('#preset').on('change',function() {
-		var option      = $(this).find('option[value=' + $(this).val() + ']');
+	selPre.on('change',function() {
+		option = $(this).find('option[value=' + $(this).val() + ']');
+		
+		targetW = option.data('width');
+		targetH = option.data('height');
+		
 		var overlay     = option.data('overlay');
 		var w           = option.data('scaledwidthpreview');
 		var h           = option.data('scaledheightpreview');
@@ -147,5 +169,12 @@ $(function() {
 		if ( overwriteFN == 1 ) {
 			$('#overwriteFile').parent().hide();
 		} else $('#overwriteFile').parent().show();
+		
+		if ( option.data('warnminsize') == 1 ) {
+			warnMinSize = 1;
+		} else {
+			warnMinSize = 0;
+			$('#warnMinSize:visible').hide();
+		}
 	});
 });

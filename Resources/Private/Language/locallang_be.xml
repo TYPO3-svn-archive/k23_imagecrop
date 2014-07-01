@@ -18,6 +18,7 @@
 			<label index="filename">Filename:</label>
 			<label index="aspectRatio">Aspect Ratio</label>
 			<label index="overwriteFile">Overwrite existing File</label>
+			<label index="warnMinSize">The selection is smaller than the required image size</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="cm1_title">Bild zuschneiden</label>
@@ -32,6 +33,7 @@
 			<label index="filename">Dateiname:</label>
 			<label index="aspectRatio">Seitenverhältnis</label>
 			<label index="overwriteFile">Vorhandene Datei überschreiben</label>
+			<label index="warnMinSize">Die Auswahl ist kleiner als der notwendige Bildausschnitt</label>
 		</languageKey>
 	</data>
 </T3locallang>
