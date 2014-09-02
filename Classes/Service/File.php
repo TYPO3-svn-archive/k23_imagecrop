@@ -61,7 +61,7 @@ class File {
 	 */
 	public function getUniqueFilename($fileName) {
 		$bfu = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Utility\\File\\BasicFileUtility');
-		$bfu->init();
+		$bfu->init(array(), $GLOBALS['TYPO3_CONF_VARS']['BE']['fileExtensions']);
 		
 		$bfu_File = basename($fileName);
 		$bfu_path = realpath(dirname($fileName));
