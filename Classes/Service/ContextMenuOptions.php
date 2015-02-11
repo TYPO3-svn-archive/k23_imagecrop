@@ -25,11 +25,10 @@ class ContextMenuOptions {
 		$fileFolderInfo = \KERN23\K23Imagecrop\Service\File::getFileAndFolderInfo($parentObject->iParts[0]);
 		
 		// Is the clicked File a registered Filetype in $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']?
-		if ( $GLOBALS['BE_USER']->userTS['tx_k23imagecrop.']['enabled'] == 1 && $fileFolderInfo['folderInfo']->isWritable() == true && $fileFolderInfo['fileInfo']['permissions']['read'] == true && in_array($fileFolderInfo['fileInfo']['extension'], \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',',$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']))) {
+		if ( $GLOBALS['BE_USER']->userTS['tx_k23imagecrop.']['enabled'] == 1 && $fileFolderInfo['fileInfo']['permissions']['read'] == true && in_array($fileFolderInfo['fileInfo']['extension'], \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',',$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']))) {
 			if(in_array(strtolower($fileFolderInfo['fileInfo']['extension']), array('gif','jpg','jpeg','png'))) {
 				
-				$moduleToken = \TYPO3\CMS\Core\FormProtection\FormProtectionFactory::get()->generateToken('moduleCall', 'k23imagecrop');
-				
+				$moduleToken = \TYPO3\CMS\Core\FormProtection\FormProtectionFactory::get()->generateToken('moduleCall', 'k23imagecrop');				
 				// URL for the menu item. Point to the page tree example module, passing the page id.
 				$baseUrl = 'mod.php?M=k23imagecrop&moduleToken='.$moduleToken.'&tx_k23imagecrop_fileimgcrop%5Baction%5D=wizard&tx_k23imagecrop_fileimgcrop%5Bcontroller%5D=Crop';
 				$baseUrl .= '&tx_k23imagecrop_fileimgcrop%5Bfile%5D='.urlencode($file).'&tx_k23imagecrop_fileimgcrop%5Bid%5D='.intval($falID);
